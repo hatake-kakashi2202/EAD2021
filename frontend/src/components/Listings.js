@@ -25,7 +25,7 @@ class Listing extends Component {
         <div className="row">
           <div className="col-lg-5">
           <Link to={{pathname:'/profile',state:t.name}}>
-            <img src={"http://localhost:5000/"+t.photo_1}  alt="Not loaded" className="w-100 mb-4 border border-md border-white shadow-sm" />
+            <img src={`${url}`+t.photo_1}  alt="Not loaded" className="w-100 mb-4 border border-md border-white shadow-sm" />
             </Link>
           </div>
           <div className="col-lg-7">

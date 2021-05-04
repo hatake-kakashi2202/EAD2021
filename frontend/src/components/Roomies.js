@@ -19,7 +19,7 @@ const Roomies = ({ match }) => {
   useEffect(() => {
     const fetchRoommates = async () => {
       const { data } = await axios.get(
-        `http://localhost:5000/api/roommates/${match.params.id}`
+        `${url}`+"api/roommates/${match.params.id}"
       )
       setRoommates(data)
     }

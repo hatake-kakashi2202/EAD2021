@@ -13,7 +13,7 @@ state={
         e.preventDefault();
         var data=this.state.credentials;
         console.log(data);
-         axios.post('http://localhost:5000/forgetpassword',data).then(
+         axios.post(`${url}`+'forgetpassword',data).then(
              res=>{
                 this.setState({
                     message:res.data.success,

@@ -27,7 +27,7 @@ class Profile extends Component{
     }
     componentDidMount =()=>
     {
-      axios.get('http://localhost:5000/api/houses/'+this.props.location.state).then(
+      axios.get(`${url}`+'api/houses/'+this.props.location.state).then(
           res=>{
               this.setState({userdata:res.data});
               console.log(this.state.userdata.photo_2);
@@ -53,13 +53,13 @@ class Profile extends Component{
         <div style={{overflow: "hidden"}}>
           <Carousel style={{overflowX: "hidden"}}>
             <Carousel.Item >
-              <img className="con" src={"http://localhost:5000/"+this.state.userdata.photo_1}/>
+              <img className="con" src={`${url}`+this.state.userdata.photo_1}/>
             </Carousel.Item>
             <Carousel.Item>
-            <img  className="con" src={"http://localhost:5000/"+this.state.userdata.photo_3} />
+            <img  className="con" src={`${url}`+this.state.userdata.photo_3} />
             </Carousel.Item>
             <Carousel.Item>
-            <img  className="con" src={"http://localhost:5000/"+this.state.userdata.photo_3} />
+            <img  className="con" src={`${url}`+this.state.userdata.photo_3} />
             </Carousel.Item>
           </Carousel>
         {/* <div className="block">
