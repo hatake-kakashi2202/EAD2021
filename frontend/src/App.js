@@ -48,6 +48,7 @@ class App extends Component {
   render() {
     return (
       <div>
+       
         <Router>
           <Navbar user={this.state.user} setUser={this.setUser} />
 

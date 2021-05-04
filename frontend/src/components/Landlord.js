@@ -94,6 +94,7 @@ class  Landlord extends Component {
    
     
     },
+    submit:false,
     filename1:'choose file',
     filename2:'choose file',
     filename3:'choose file',
@@ -216,14 +217,14 @@ class  Landlord extends Component {
   data.append("photo_2",this.state.credentials.photo_2);
   data.append("photo_3",this.state.credentials.photo_3);
   console.log(data)
-  axios.post('http://localhost:5000/api/houses/create',data,
+  axios.post(`${url}`+'api/houses/create',data,
    
   ).then(
       res=>{
         console.log(res.data);
           console.log(res.data._id)
           localStorage.setItem('id1',res.data._id);  
-          return <Redirect exact to="/" />;
+         this.setState({submit:true});
 
 
       }).catch(err=>{
@@ -243,6 +244,10 @@ const { selectedOption } = this.state;
 const { selectedOption1 } = this.state;
 const { selectedOption2 } = this.state;
 const { selectedOption3} = this.state;
+if(this.state.submit)
+{   
+  return <Redirect to="/" />;
+}
 
     
     let optio;

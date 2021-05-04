@@ -9,7 +9,7 @@ const roommates = () => {
   const [q, setQ] = useState('')
   useEffect(() => {
     const fetchRoommates = async () => {
-      const { data } = await axios.get('http://localhost:5000/api/roommates')
+      const { data } = await axios.get(`${url}`+'api/roommates')
       setRoommates(data)
     }
     fetchRoommates()

@@ -29,7 +29,7 @@ class Roomiereg extends Component {
 
     var data = this.state.credentials
     axios
-      .post('http://localhost:5000/api/roommates/roomiereg', data)
+      .post(`${url}`+'api/roommates/roomiereg', data)
       .then((res) => {
         console.log(res)
         this.setState({

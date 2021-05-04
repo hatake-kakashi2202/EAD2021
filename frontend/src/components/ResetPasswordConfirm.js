@@ -46,7 +46,7 @@ confirmpassword={};
       
      
         console.log(data);
-       axios.post('http://localhost:5000/changepassword/:'+token,data,config).then(
+       axios.post(`${url}`+'changepassword/:'+token,data,config).then(
              res=>{
                  console.log(res.data);
                  this.setState({

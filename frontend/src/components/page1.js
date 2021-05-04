@@ -1,21 +1,23 @@
 import React, {  Component } from 'react';
 import axios from 'axios';
+import {Link, Redirect } from 'react-router-dom';
 import './style.css';
 import img1 from './images/pic22.jpg'
 
 class  Page1 extends Component {
   state={
       credentials:{name:'',phonenumber:'',email_id:'',from_address:'',from_city:'',from_state:'',from_zipcode:'',Num_of_workers_required:'',Num_of_trucks_required:'',to_address:'',to_city:'',to_state:'',to_zipcode:'',date_of_moving:''},
-      count:1,};
+      count:1,submit:false};
 
     packer=event=>{
       // event.preventDefault();
    
     var data=this.state.credentials
    
-    axios.post('http://localhost:5000/api/packer/create',data).then(
+    axios.post(`${url}`+'api/packer/create',data).then(
         res=>{
-          console.log(res);         
+          console.log(res);  
+          this.setState({submit:true});       
         }).catch(
             err=>{     
                 console.log(err);    
@@ -39,6 +41,10 @@ statechanged= (names,value)=>{
      
 render()
 {
+  if(this.state.submit)
+  {
+    return <Redirect to="/"/>
+    }
 if(this.props.user)
 {
   if(this.state.count==1)

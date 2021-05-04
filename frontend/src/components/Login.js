@@ -4,18 +4,24 @@ import {Helmet} from "react-helmet";
 import axios from 'axios';
 import img1 from './images/pic22.jpg'
 import   './style.css';
+
 class  Login  extends Component {
   state={
     credentials:{name:'',password:''},
     loggedIn:false,
     message:'',   
   };
-
+ 
 login=event=>{
+
     event.preventDefault(); 
+ 
   var data=this.state.credentials; 
-  axios.post('http://localhost:5000/login',data).then(
+
+  axios.post(`${url}`+'login',data).then(
+    
       res=>{
+      
         console.log(res);
         localStorage.setItem('token',res.data.token);  
         localStorage.setItem('name',res.data.name); 
@@ -53,14 +59,10 @@ inputChanged= event=>{
         {this.state.message}
       </div>)
     };
-
+  
   return (
-      <div  id="particles-js" className="landlord" style={{fontFamily:"sans-serif"}}>
-        <Helmet>
-    <script src="../../public/particles.min.js"></script>
-    <script src="../../public/particles.js"></script>
-    <script src="../../public/app1.js"></script>
-          </Helmet>
+      <div   className="landlord" style={{fontFamily:"sans-serif"}}>
+        
     <br/>
  <br/>
  <br/>

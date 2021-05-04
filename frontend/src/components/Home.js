@@ -22,9 +22,12 @@ import Slider from 'react-animated-slider';
 import {Link} from 'react-router-dom';
 import 'react-animated-slider/build/horizontal.css';
 
-
+//const baseUrl = process.env.REACT_BASE_URL;
+ console.log(process.env)
 class Home extends Component {
+
  render(){
+  
   return (
     <div style={{overflowX:"hidden"}}>
    
@@ -49,7 +52,8 @@ class Home extends Component {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-8 text-center">
-            <h2 className="text-whitecream mt-0">We've got what you need!</h2>
+        
+            <h2 className="text-whitecream mt-0"> We've got what you need!</h2>
             <hr className="divider dark my-4" />
             <p className="text-whitecream-75 mb-4">Become a part of the growing findR family. As a promise to our community, all our listings are completely free & always will be. Now you can grow your business happily. Further more, over a million buyers visit us every month, giving you the audience that you need.</p>
             <a className="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
@@ -89,6 +93,7 @@ class Home extends Component {
             <img src={logo3} alt="" />
               <h3 className="h4 text-greenlight mb-2">Finding Roomates</h3>
               <p className="text-dark mb-0">To find a roomate of our choice.</p>
+            
             </div>
             </Link>
           </div>

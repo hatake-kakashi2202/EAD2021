@@ -38,11 +38,10 @@ router.post('/create',asyncHandler(async(req,res) => {
     // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
     photo_1 = req.files.photo_1;
     photo_2 = req.files.photo_2;
-   
     photo_3 = req.files.photo_3;
-    uploadPath1 = path.join(__dirname,'/findR/images/' + photo_1.name);
-    uploadPath2 =path.join( __dirname+ '/findR/images/' + photo_2.name);
-    uploadPath3 = path.join( __dirname+'/findR/images/' + photo_3.name);
+    uploadPath1 = '/findR/images/' + photo_1.name;
+    uploadPath2 =  '/findR/images/' + photo_2.name;
+    uploadPath3 =  '/findR/images/' + photo_3.name;
     console.log(uploadPath1)
    await photo_1.mv(uploadPath1, function(err) {
         if (err)

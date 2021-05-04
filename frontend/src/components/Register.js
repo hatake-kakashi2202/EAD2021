@@ -21,7 +21,7 @@ class  Register extends Component {
         console.log(this.state.credentials);
         
         var data=this.state.credentials;
-        axios.post('http://localhost:5000/signup',data).then(
+        axios.post(`${url}`+'signup',data).then(
             res=>{
                 console.log(res)
                 this.setState({
@@ -99,12 +99,8 @@ class  Register extends Component {
     
    
     return (
-      <div  id="particles-js" className="landlord" style={{fontFamily:"sans-serif"}}>
-        <Helmet>
-    <script src="../../public/particles.min.js"></script>
-    <script src="../../public/particles.js"></script>
-    <script src="../../public/app1.js"></script>
-          </Helmet>
+      <div   className="landlord" style={{fontFamily:"sans-serif"}}>
+       
     <br/>
  <br/>
  <br/>

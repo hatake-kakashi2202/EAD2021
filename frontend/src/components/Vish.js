@@ -31,7 +31,7 @@ class Vish extends Component {
       postsPerPage: 3,
     };
     componentDidMount(){
-      axios.get('http://localhost:5000/api/houses').then(
+      axios.get(`${url}`+'api/houses').then(
           res => {
              this.setState({posts:res.data});
          }
@@ -70,7 +70,7 @@ class Vish extends Component {
      sqft:this.state.credentials.sqft,
     }
     console.log(data);
-      axios.post('http://localhost:5000/api/houses/search',data).then(
+      axios.post(`${url}`+'api/houses/search',data).then(
           res => {
             console.log(res.data);
              this.setState({posts:res.data,submit:true});

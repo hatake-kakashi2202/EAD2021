@@ -79,7 +79,7 @@ class LDprofile extends Component{
         
   
   
-        axios.get('http://localhost:5000/api/houses/'+localStorage.getItem('name')).then(
+        axios.get(`${url}`+'api/houses/'+localStorage.getItem('name')).then(
             res=>{
                 this.setState({userdata:res.data});
                 console.log(this.state.userdata);
@@ -231,16 +231,16 @@ render()
   const data = [{
     id: 1,
     name: "Exterior",
-    image:"http://localhost:5000/"+this.state.userdata.photo_1
+    image:`${url}`+this.state.userdata.photo_1
     
 }, {
     id: 2,
     name: "Living Room",
-    image: "http://localhost:5000/"+this.state.userdata.photo_2
+    image: `${url}`+this.state.userdata.photo_2
 }, {
     id: 3,
     name: "Bedroom",
-    image: "http://localhost:5000/"+this.state.userdata.photo_3
+    image: `${url}`+this.state.userdata.photo_3
 },];
 
 console.log(data);
